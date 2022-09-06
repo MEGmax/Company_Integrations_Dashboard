@@ -1,0 +1,6 @@
+@using MatBlazor
+<MatSubtitle1 TValue = "string" Label="Are you sure you want to continue. Data will not be saved"></MatSubtitle1>
+@code {
+    [Parameter]
+    public Customer customerDeleted { get; set; } = new Customer();
+}

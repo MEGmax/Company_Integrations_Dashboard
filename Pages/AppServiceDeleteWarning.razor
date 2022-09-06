@@ -1,0 +1,7 @@
+@using MatBlazor
+
+<MatSubtitle1 TValue = "string" Label="Are you sure you want to continue. Data will not be saved"></MatSubtitle1>
+@code {
+    [Parameter]
+    public AppService appServiceDeleted { get; set; } = new AppService();
+}

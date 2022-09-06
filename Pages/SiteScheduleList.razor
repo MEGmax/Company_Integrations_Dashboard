@@ -1,0 +1,140 @@
+@page "/SiteScheduleList"
+@using testing_app.Data
+@using MatBlazor
+@inject SiteScheduleService SiteScheduleService
+@inject IJSRuntime jsRuntime
+
+<h1>Site Schedule</h1>
+<p><strong>DISCLAIMER:</strong> Refresh is required after adding or delete an entry. Cron Expression Translation has limited functionallity.</p>
+@if (siteSchedules == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <MatIconButton Icon = "add_circle" style="position: absolute; left: 2000px; width: 33px; height: 33px; transform: scale(1.5)" OnClick="@(e => {addClicked = true;})"></MatIconButton>
+    <div class="table-container">
+     <MatTable Items = "@siteSchedules" class="mat-elevation-z5" AllowSelection="true" PageSize = "25" Striped = "true" FilterByColumnName = "CustomerName" UseSortHeaderRow = "true" style = "margin-top: 10px; max-height: 800px; overflow: auto;">
+        <MatTableHeader>
+            <MatSortHeaderRow>
+            <MatSortHeader SortId = "edit">Edit</MatSortHeader>
+            <MatSortHeader SortId = "id">Id</MatSortHeader>
+            <MatSortHeader SortId = "customerName">Customer Name</MatSortHeader>
+            <MatSortHeader SortId = "name">Site Name</MatSortHeader>
+            <MatSortHeader SortId = "cronExpression">Cron Expression</MatSortHeader>
+            <MatSortHeader SortId = "cronTranslation">Cron Translation</MatSortHeader>
+            <MatSortHeader SortId = "enabled">Enabled</MatSortHeader>
+            <MatSortHeader SortId = "rAS">Run All Scheduled</MatSortHeader>
+            <MatSortHeader SortId = "appServiceName">App Service</MatSortHeader>
+            <MatSortHeader SortId = "description">Description</MatSortHeader>
+            <MatSortHeader SortId = "integrationName">Integration Name</MatSortHeader>
+            <MatSortHeader SortId = "configFilepath">Configuration FilePath</MatSortHeader>
+            </MatSortHeaderRow>
+        </MatTableHeader>
+        <MatTableRow>
+            <td><MatIconButton Icon = "create" @onclick=@(e => {item = context; editClicked = true;}) style = "right: 5px; top: -5px; width: 33px; height: 33px; transform: scale(1.5)"></MatIconButton></td>
+            <td>@context.Id</td>
+            <td>@context.CustomerName</td>
+            <td>@context.SiteName</td>
+            <td>@context.CronExpression</td>
+            <td>@context.Frequency</td>
+            <td>@context.Enabled</td>
+            <td>@context.RunAllScheduled</td>
+            <td>@context.AppServiceName</td>
+            <td>@context.Description</td>
+            <td>@context.IntegrationName</td>
+            <td>@context.ConfigFilePath</td>
+        </MatTableRow>
+    </MatTable>
+    </div>
+
+    <MatDialog @bind-IsOpen="@editClicked">
+        <MatDialogTitle>Edit</MatDialogTitle>
+        <MatDialogContent>
+            <SiteScheduleEdit Item="@item" />
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="@(e => OkClickSaved(item))">Save</MatButton>
+            <MatButton OnClick="@(e => {editClicked = false; })">Cancel</MatButton>
+            <MatButton OnClick="@(e => preDelete(item))">Delete</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+
+
+    <MatDialog @bind-IsOpen="@addClicked">
+        <MatDialogTitle>Add</MatDialogTitle>
+        <MatDialogContent>
+            <SiteScheduleAdd ItemAdded = "@itemAdded"/>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="@(e => OkClickAdd(itemAdded))">Save</MatButton>
+            <MatButton OnClick="@(e => {addClicked = false;})">Cancel</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+
+    <MatDialog @bind-IsOpen="@deleteClicked">
+        <MatDialogTitle>Delete Entry</MatDialogTitle>
+        <MatDialogContent>
+            <SiteDeletedWarning itemDeleted = "@itemDeleted"/>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="@(e => OkClickDelete(itemDeleted))">Yes</MatButton>
+            <MatButton OnClick="@(e => {editClicked = false; deleteClicked = false;})">No</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+}
+
+@code {
+    private bool editClicked = false;
+    private bool addClicked = false;
+    private bool deleteClicked = false;
+    private SiteSchedule item = new SiteSchedule(); //this is used for editing an item already in the site schedule table
+    private SiteSchedule itemAdded = new SiteSchedule(); //this is used for adding a row to the site schedule table
+    private SiteSchedule itemDeleted = new SiteSchedule(); //this is used for adding a row to the site schedule table
+    public List<SiteSchedule>? siteSchedules; //this will be the list of rows (table)
+
+    protected override async Task OnInitializedAsync()
+    {
+        siteSchedules = await SiteScheduleService.GetSiteSchedulesAsync(); //this line gets the list of rows (the table site schedule)
+    }
+    public void OkClickSaved(SiteSchedule obj)
+    {
+        if(requiredFilled(obj))
+        {
+            SiteScheduleService.sqlUpdater(obj); //calls method to update table with edited item information in database
+            editClicked = false; //closes prompt
+        }
+    }
+    void OkClickAdd(SiteSchedule objAdded)
+    {
+        if(requiredFilled(objAdded))
+        {
+            SiteScheduleService.siteAdder(objAdded); //calls method to add a row to the sql database
+            addClicked = false; //closes prompt
+        }
+    }
+    void preDelete(SiteSchedule objDeleted)
+    {
+        deleteClicked = true;
+        itemDeleted = objDeleted;
+    }
+    void OkClickDelete(SiteSchedule objDeleted)
+    {
+        SiteScheduleService.siteDeleter(objDeleted); //calls method to delete a row from the sql database
+        editClicked = false; //closes prompt
+        deleteClicked = false;
+    }
+    bool requiredFilled(SiteSchedule objToCheck)
+    {
+        if(objToCheck.SiteName != null && objToCheck.CronExpression != null  && objToCheck != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+
+

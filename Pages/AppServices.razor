@@ -1,0 +1,117 @@
+@page "/AppServices"
+
+@using testing_app.Data
+@using MatBlazor
+@inject AppServicesService AppServicesService
+@inject IJSRuntime jsRuntime
+
+<h1>App Services</h1>
+@if (appServiceTable == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <MatIconButton Icon = "add_circle" style="position: absolute; left: 2000px; width: 33px; height: 33px; transform: scale(1.5)" OnClick="@(e => {addClicked = true;})"></MatIconButton>
+     <MatTable Items = "@appServiceTable" class="mat-elevation-z5" AllowSelection="true" PageSize = "10" Striped = "true" FilterByColumnName = "AppServiceName" UseSortHeaderRow = "true" style = "margin-top: 10px; max-height: 800px; overflow: auto;">
+        <MatTableHeader>
+            <MatSortHeaderRow>
+            <MatSortHeader SortId = "edit">Edit</MatSortHeader>
+            <MatSortHeader SortId = "Id">Id</MatSortHeader>
+            <MatSortHeader SortId = "Customer">App Service Name</MatSortHeader>
+            </MatSortHeaderRow>
+        </MatTableHeader>
+        <MatTableRow>
+            <td><MatIconButton Icon = "create" @onclick=@(e => {appServiceEdited = context; editClicked = true;}) style = "right: 5px; top: -5px; width: 33px; height: 33px; transform: scale(1.5)"></MatIconButton></td>
+            <td>@context.Id</td>
+            <td>@context.AppServiceName</td>
+        </MatTableRow>
+    </MatTable>
+    
+
+    <MatDialog @bind-IsOpen="@editClicked">
+            <MatDialogTitle>Edit</MatDialogTitle>
+            <MatDialogContent>
+                <AppServiceEdit AppServiceEdited = "@appServiceEdited"/>
+            </MatDialogContent>
+            <MatDialogActions>
+                <MatButton OnClick="@(e => OkClickSaved(appServiceEdited))">Save</MatButton>
+                <MatButton OnClick="@(e => {editClicked = false; })">Cancel</MatButton>
+                <MatButton OnClick="@(e => preDelete(appServiceEdited))">Delete</MatButton>
+            </MatDialogActions>
+        </MatDialog>
+
+    <MatDialog @bind-IsOpen="@addClicked">
+            <MatDialogTitle>Add</MatDialogTitle>
+            <MatDialogContent>
+                <AppServiceAdd AppServiceAdded = "@appServiceAdded"/>
+            </MatDialogContent>
+            <MatDialogActions>
+                <MatButton OnClick="@(e => OkClickAdd(appServiceAdded))">Save</MatButton>
+                <MatButton OnClick="@(e => {addClicked = false;})">Cancel</MatButton>
+            </MatDialogActions>
+        </MatDialog>
+
+    <MatDialog @bind-IsOpen="@deleteClicked">
+            <MatDialogTitle>Delete Entry</MatDialogTitle>
+            <MatDialogContent>
+                <AppServiceDeleteWarning appServiceDeleted = "@appServiceDeleted"/>
+            </MatDialogContent>
+            <MatDialogActions>
+                <MatButton OnClick="@(e => OkClickDelete(appServiceDeleted))">Yes</MatButton>
+                <MatButton OnClick="@(e => {editClicked = false; deleteClicked = false;})">No</MatButton>
+            </MatDialogActions>
+        </MatDialog>
+}
+
+@code{
+    private bool editClicked = false;
+    private bool addClicked = false;
+    private bool deleteClicked = false;
+    private AppService appServiceEdited = new AppService();
+    private AppService appServiceAdded = new AppService();
+    private AppService appServiceDeleted = new AppService();
+    public List<AppService>? appServiceTable; //this will be the list of rows (table)
+    protected override async Task OnInitializedAsync()
+    {
+        appServiceTable = await AppServicesService.GetAppServices(); //this line gets the list of rows (the table site schedule)
+    }
+    public void OkClickSaved(AppService obj)
+    {
+        if(requiredFilled(obj))
+        {
+            AppServicesService.appServiceEditer(obj); //calls method to update table with edited item information in database
+            editClicked = false; //closes prompt
+        }
+    }
+    void OkClickAdd(AppService objAdded)
+    {
+        if(requiredFilled(objAdded))
+        {
+            AppServicesService.appServiceAdder(objAdded); //calls method to add a row to the sql database
+            addClicked = false; //closes prompt
+        }
+    }
+    void preDelete(AppService objDeleted)
+    {
+        deleteClicked = true;
+        appServiceDeleted = objDeleted;
+    }
+    void OkClickDelete(AppService objDeleted)
+    {
+        AppServicesService.appServiceDeleter(objDeleted); //calls method to delete a row from the sql database
+        editClicked = false; //closes prompt
+        deleteClicked = false;
+    }
+    bool requiredFilled(AppService objToCheck)
+    {
+        if(objToCheck.AppServiceName != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}

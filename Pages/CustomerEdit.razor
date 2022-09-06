@@ -1,0 +1,12 @@
+@using MatBlazor
+@using testing_app.Data
+@inject CustomerService CustomerService
+
+<p>Note: Id field is not editable</p>
+<p>Use caution when editing customer names</p>
+<MatTextField FullWidth = "true"  @bind-Value="@customerEdited.CustomerName" ShowClearButton="true" TItem="string" Label="Customer Name"></MatTextField>
+
+@code {
+    [Parameter]
+    public Customer customerEdited { get; set; } = new Customer();
+}

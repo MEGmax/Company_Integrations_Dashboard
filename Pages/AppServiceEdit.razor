@@ -1,0 +1,12 @@
+@using MatBlazor
+@using testing_app.Data
+@inject AppServicesService AppServicesService
+
+<p>Note: Id field is not editable</p>
+<p>Use caution when editing App Service Names</p>
+<MatTextField FullWidth = "true" @bind-Value="@AppServiceEdited.AppServiceName" TItem="string" Label="App Service Name"></MatTextField>
+
+@code {
+    [Parameter]
+    public AppService AppServiceEdited { get; set; } = new AppService();
+}

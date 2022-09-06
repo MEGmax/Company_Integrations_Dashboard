@@ -1,0 +1,115 @@
+﻿@page "/"
+@using MatBlazor
+@using System
+@using testing_app
+@inject IndexService IndexService
+@inject IJSRuntime jsRuntime
+
+<PageTitle>Index</PageTitle>
+
+<h1>Questica Integrations Manager</h1>
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner" style="min-height:200px;">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-bottom" style="width: 1050px; max-height: 890px; overflow:auto;">
+        <MatTable Items="integrations"class="mat-elevation-z5" AllowSelection="true" PageSize = "10" Striped = "true">
+            <MatTableHeader>
+                <th>Id</th> 
+                <th>Customer</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Size(rows)</th>
+                <th>Last Successful Run</th>
+                <th>Last Run</th>
+                <th>Duration(mins)</th>
+                <th>Success Rate</th>
+                <th>Last Edited By</th>
+                <th>Transfer Type</th>
+                <th>Rows/Min</th>
+                <th>Direction</th>
+            </MatTableHeader>
+            <MatTableRow>
+                <td>@context.Id</td>
+                <td>@context.Customer</td>
+                <td>@context.Source</td>
+                <td>@context.Destination</td>
+                <td>@context.Size</td>
+                <td>@context.LastSuccessfulRun</td>
+                <td>@context.LastRun</td>
+                <td>@context.Duration</td>
+                <td>@context.SuccessRate</td>
+                <td>@context.LastEditedBy</td>
+                <td>@context.TransferType</td>
+                <td>@context.RowsPerMin</td>
+                <td>@context.Direction</td>
+            </MatTableRow>
+        </MatTable>
+        </div>
+        <div class="mat-elevation-z24" style="position: fixed; right: 100px; width: 400px; height: 200px;">
+            <MatHeadline3 style="margin-top: 25px;"><center>Number of Failed Integrations</center></MatHeadline3>
+            <MatHeadline4><center>34</center></MatHeadline4>
+        </div>
+        <div class="mat-elevation-z24" style="position: fixed; width: 350px; height: 250px; right: 550px; top: 250px;">
+            <MatHeadline3 style="margin-top: 90px;"><center>Grid Settings</center></MatHeadline3>
+        </div>
+        <div class="mat-elevation-z24" style="position: fixed; width: 350px; height: 250px; right: 550px; bottom: 300px;">
+            <MatHeadline3 style="margin-top: 25px;"><center>Avg. Data Loading Time</center></MatHeadline3>
+            <MatHeadline4><center>@(String.Concat((Integration.avgLoadingTime(integrations)).ToString(), " mins"))</center></MatHeadline4>
+        </div>
+        <div class="mat-elevation-z24" style="width: 400px; height: 200px; position: fixed; top: 420px; right:100px;"> 
+            <MatHeadline3 style="margin-top: 30px;"><center>Overall Success Rate</center></MatHeadline3>
+            <MatHeadline4><center>@(String.Concat(Integration.successRateDeterminer(integrations).ToString(), "%"))</center></MatHeadline4>
+        </div>
+        <div class="mat-elevation-z24" style="width: 400px; height: 200px; position: fixed; top: 700px; right:100px;"> 
+            <MatHeadline3 style="margin-top: 20px;"><center>Avg. # Rows/Min (All Integrations)</center></MatHeadline3>
+            <MatHeadline4><center>@(String.Concat(Integration.totalRowsPerTotalTime(integrations).ToString(), " rows/min"))</center></MatHeadline4>
+        </div> 
+    </div>
+</div>
+
+@code
+{
+    public List<IndexIntegration> integrations = new List<IndexIntegration>();
+    protected override async Task OnInitializedAsync()
+    {
+        integrations = await IndexService.GetIndexIntegrations();
+    }
+    
+    public void changeSettings()
+    {
+        settingsClicked = true;
+    }
+    public bool settingsClicked = false;
+    public class Integration
+    {
+        public static double avgLoadingTime(List<IndexIntegration> integrations)
+        {
+            int totalTime = 0;
+            foreach (var item in integrations)
+            {
+                totalTime+=item.Duration;
+            }
+           return Math.Round(totalTime/(integrations[integrations.Count-1].Id), 2);
+        } 
+        public static int totalRowsPerTotalTime(List<IndexIntegration> integrations)
+        {
+            int totalRows = 0, totalTime = 0, ans = 0;
+            foreach (var item in integrations)
+            {
+                totalRows+=item.Size;
+                totalTime+=item.Duration;
+            }
+            ans = totalRows/totalTime;
+            return ans;
+        }
+        public static double successRateDeterminer(List<IndexIntegration> integrations)
+        {
+            double adder = 0.0;
+            foreach (var item in integrations)
+            {
+                adder += item.SuccessRate;
+            }
+            return adder/integrations.Count;
+        }
+    }
+}

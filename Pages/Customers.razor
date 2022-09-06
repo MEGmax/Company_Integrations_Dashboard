@@ -1,0 +1,115 @@
+@page "/Customers"
+
+@using testing_app.Data
+@using MatBlazor
+@inject CustomerService CustomerService
+@inject IJSRuntime jsRuntime
+
+<h1>Customers</h1>
+@if (customerTable == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <MatIconButton Icon = "add_circle" style="position: absolute; left: 2000px; width: 33px; height: 33px; transform: scale(1.5)" OnClick="@(e => {addClicked = true;})"></MatIconButton>
+     <MatTable Items = "@customerTable" class="mat-elevation-z5" AllowSelection="true" PageSize = "10" Striped = "true" FilterByColumnName = "CustomerName" UseSortHeaderRow = "true" style = "margin-top: 10px; max-height: 800px; overflow: auto;">
+        <MatTableHeader>
+            <MatSortHeaderRow>
+            <MatSortHeader SortId = "edit">Edit</MatSortHeader>
+            <MatSortHeader SortId = "id">Id</MatSortHeader>
+            <MatSortHeader SortId = "Customer">Customer Name</MatSortHeader>
+            </MatSortHeaderRow>
+        </MatTableHeader>
+        <MatTableRow>
+            <td><MatIconButton Icon = "create" @onclick=@(e => {customerEdited = context; editClicked = true;}) style = "right: 5px; top: -5px; width: 33px; height: 33px; transform: scale(1.5)"></MatIconButton></td>
+            <td>@context.Id</td>
+            <td>@context.CustomerName</td>
+        </MatTableRow>
+    </MatTable>
+
+    <MatDialog @bind-IsOpen="@editClicked">
+            <MatDialogTitle>Edit</MatDialogTitle>
+            <MatDialogContent>
+                <CustomerEdit customerEdited = "@customerEdited" />
+            </MatDialogContent>
+            <MatDialogActions>
+                <MatButton OnClick="@(e => OkClickSaved(customerEdited))">Save</MatButton>
+                <MatButton OnClick="@(e => {editClicked = false; })">Cancel</MatButton>
+                <MatButton OnClick="@(e => preDelete(customerEdited))">Delete</MatButton>
+            </MatDialogActions>
+        </MatDialog>
+
+    <MatDialog @bind-IsOpen="@addClicked">
+            <MatDialogTitle>Add</MatDialogTitle>
+            <MatDialogContent>
+                <CustomerAdd customerAdded = "@customerAdded"/>
+            </MatDialogContent>
+            <MatDialogActions>
+                <MatButton OnClick="@(e => OkClickAdd(customerAdded))">Save</MatButton>
+                <MatButton OnClick="@(e => {addClicked = false;})">Cancel</MatButton>
+            </MatDialogActions>
+        </MatDialog>
+    <MatDialog @bind-IsOpen="@deleteClicked">
+            <MatDialogTitle>Delete Entry</MatDialogTitle>
+            <MatDialogContent>
+                <CustomerDeleteWarning customerDeleted = "@customerDeleted"/>
+            </MatDialogContent>
+            <MatDialogActions>
+                <MatButton OnClick="@(e => OkClickDelete(customerDeleted))">Yes</MatButton>
+                <MatButton OnClick="@(e => {editClicked = false; deleteClicked = false;})">No</MatButton>
+            </MatDialogActions>
+        </MatDialog>
+}
+
+@code{
+    private bool editClicked = false;
+    private bool addClicked = false;
+    private bool deleteClicked = false;
+    private Customer customerEdited = new Customer();
+    private Customer customerAdded = new Customer();
+    private Customer customerDeleted = new Customer();
+    public List<Customer>? customerTable; //this will be the list of rows (table)
+    protected override async Task OnInitializedAsync()
+    {
+        customerTable = await CustomerService.GetCustomerAsync(); //this line gets the list of rows (the table site schedule)
+    }
+    public void OkClickSaved(Customer obj)
+    {
+        if(requiredFilled(obj))
+        {
+            CustomerService.customerEditer(obj); //calls method to update table with edited item information in database
+            editClicked = false; //closes prompt
+        }
+    }
+    void OkClickAdd(Customer objAdded)
+    {
+        if(requiredFilled(objAdded))
+        {
+            CustomerService.customerAdder(objAdded); //calls method to add a row to the sql database
+            addClicked = false; //closes prompt
+        }
+    }
+    void preDelete(Customer objDeleted)
+    {
+        deleteClicked = true;
+        customerDeleted = objDeleted;
+    }
+    void OkClickDelete(Customer objDeleted)
+    {
+        CustomerService.customerDeleter(objDeleted); //calls method to delete a row from the sql database
+        editClicked = false; //closes prompt
+        deleteClicked = false;
+    }
+    bool requiredFilled(Customer objToCheck)
+    {
+        if(objToCheck.CustomerName != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}

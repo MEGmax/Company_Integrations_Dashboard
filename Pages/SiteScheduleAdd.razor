@@ -1,0 +1,29 @@
+@using MatBlazor
+@using testing_app.Data
+@inject CustomerService CustomerService
+@inject AppServicesService AppServicesService
+
+<p>Note: Id field will be added automatically</p>
+<MatTextField Required = "true" @bind-Value="@ItemAdded.SiteName" TValue = "string" Label = "Site Name"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@ItemAdded.CronExpression" TValue = "string" Label = "Cron Expression"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@ItemAdded.Enabled" TValue = "bool" Label = "Enabled"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@ItemAdded.RunAllScheduled" TValue = "bool" Label = "Run All Scheduled"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@ItemAdded.Description"TValue = "string" Label = "Description"></MatTextField>
+<MatTextField @bind-Value="@ItemAdded.IntegrationName"TValue = "string" Label = "Integration Name"></MatTextField>
+<MatTextField @bind-Value="@ItemAdded.ConfigFilePath"TValue = "string" Label = "Config File Path"></MatTextField>
+<MatAutocompleteList @bind-Value="@ItemAdded.CustomerName" Items="@customerNames" ShowClearButton="true" TItem="string" Label="Customer Name"></MatAutocompleteList>
+<MatAutocompleteList @bind-Value="@ItemAdded.AppServiceName" Items = "@appServiceNames" ShowClearButton="true" Label="App Service Name"></MatAutocompleteList>
+
+@code{
+    [Parameter]
+    public SiteSchedule ItemAdded { get; set; } = new SiteSchedule();
+    public List<string> appServiceNames = new List<string>();
+    public List<string> customerNames = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        appServiceNames = AppServicesService.getAppServiceNames();
+        customerNames = CustomerService.getCustomerNames(); //this line gets the list of rows (the table site schedule)
+    }
+
+}

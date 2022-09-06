@@ -1,0 +1,28 @@
+@using MatBlazor
+@using testing_app.Data
+@inject CustomerService CustomerService
+@inject AppServicesService AppServicesService
+
+<MatStringField Disabled="true" Value="@Convert.ToString(Item.Id)" Label="ID"></MatStringField>
+<MatTextField Required = "true" @bind-Value="@Item.SiteName" Dense="true" Label="Site Name"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@Item.CronExpression" Label="Cron Expression"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@Item.Enabled" Label="Enabled"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@Item.RunAllScheduled" Label="Run All Scheduled"></MatTextField>
+<MatTextField Required = "true" @bind-Value="@Item.Description" Label="Description"></MatTextField>
+<MatTextField @bind-Value="@Item.IntegrationName" Label="Integration Name"></MatTextField>
+<MatTextField @bind-Value="@Item.ConfigFilePath" Label="Configration File Path"></MatTextField>
+<MatSelectItem @bind-Value="@Item.AppServiceName" Items = "@appServicesNames" Label="App Service Name"></MatSelectItem>
+<MatAutocompleteList Items="@customerNames" @bind-Value="@Item.CustomerName" ShowClearButton="true" TItem="string" Label="Customer Name"></MatAutocompleteList>
+
+@code {
+    [Parameter]
+    public SiteSchedule Item { get; set; } = new SiteSchedule();    
+    public List<string> customerNames = new List<string>();
+    public List<string> appServicesNames = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        customerNames = CustomerService.getCustomerNames();
+        appServicesNames = AppServicesService.getAppServiceNames();
+    }
+}

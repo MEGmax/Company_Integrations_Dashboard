@@ -1,0 +1,11 @@
+@using MatBlazor
+@using testing_app.Data
+@inject CustomerService CustomerService
+<p>Note: Id field will be added automatically</p>
+<MatTextField @bind-Value="@CustomerAdded.CustomerName" ShowClearButton="true" TItem="string" Label="Customer Name" FullWidth = "true"></MatTextField>
+
+@code{
+
+    [Parameter]
+    public Customer CustomerAdded { get; set; } = new Customer();
+}

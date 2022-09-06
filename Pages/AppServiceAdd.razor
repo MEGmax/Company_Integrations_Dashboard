@@ -1,0 +1,11 @@
+@using MatBlazor
+@using testing_app.Data
+@inject AppServicesService AppServicesService
+
+<p>Note: Id field will be added automatically</p>
+<MatTextField @bind-Value="@AppServiceAdded.AppServiceName" Label="App Service Name" FullWidth = "true"></MatTextField>
+
+@code{
+    [Parameter]
+    public AppService AppServiceAdded { get; set; } = new AppService();
+}
