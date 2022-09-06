@@ -1,0 +1,40 @@
+﻿<div class="top-row ps-3 navbar navbar-dark" style="position: relative;">
+<img src="https://www.questica.com/wp-content/uploads/Questica-Icon.png" style="right: 0; position: absolute; width: 75px; height: 75px;">
+<span class="title-nameCompany"> <strong>Questica</strong></span> 
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="SiteScheduleList">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Integration Schedule
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Customers">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Customers Info 
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="AppServices">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> App Service Info 
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
