@@ -1,0 +1,72 @@
+.navbar-toggler[b-kqkjz1r4qt] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-kqkjz1r4qt] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-kqkjz1r4qt] {
+    font-size: 1.1rem;
+}
+
+.oi[b-kqkjz1r4qt] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-kqkjz1r4qt] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-kqkjz1r4qt] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-kqkjz1r4qt] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-kqkjz1r4qt]  a {
+        color: #d7d7d7;
+        border-radius: 5px;
+        height: 3rem;
+        display: fixed;
+        align-items: center;
+        line-height: 3rem;
+        width: 300px;
+    }
+
+.nav-item[b-kqkjz1r4qt]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+    max-width: 230px;
+}
+
+.nav-item[b-kqkjz1r4qt]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    max-width: 230px;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-kqkjz1r4qt] {
+        display: none;
+    }
+
+    .collapse[b-kqkjz1r4qt] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
+.title-nameCompany[b-kqkjz1r4qt]{
+    color: rgb(240, 240, 238);
+    padding: auto;
+    display: inline;
+    align-items: right;
+    font-size: 1.2rem;
+}

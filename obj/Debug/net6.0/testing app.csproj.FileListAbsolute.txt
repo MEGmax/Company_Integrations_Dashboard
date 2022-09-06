@@ -1,0 +1,61 @@
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\appsettings.json
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\testing app.staticwebassets.runtime.json
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\testing app.exe
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\testing app.deps.json
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\testing app.runtimeconfig.json
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\testing app.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\testing app.pdb
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.csproj.AssemblyReference.cache
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.AssemblyInfoInputs.cache
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.AssemblyInfo.cs
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.csproj.CoreCompileInputs.cache
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.RazorAssemblyInfo.cache
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.RazorAssemblyInfo.cs
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\scopedcss\bundle\testing app.styles.css
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\scopedcss\projectbundle\testing app.bundle.scp.css
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\refint\testing app.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.pdb
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.genruntimeconfig.cache
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\ref\testing app.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\testing app.csproj.CopyComplete
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\MatBlazor.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\obj\Debug\net6.0\scopedcss\Pages\SiteScheduleEdit.razor.rz.scp.css
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\Dapper.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

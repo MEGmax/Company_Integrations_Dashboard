@@ -1,0 +1,96 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = testing_app
+build_property.RootNamespace = testing_app
+build_property.ProjectDir = C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\mgrech\OneDrive - Questica Inc\Desktop\testing app
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/AppServiceAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwU2VydmljZUFkZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/AppServiceDeleteWarning.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwU2VydmljZURlbGV0ZVdhcm5pbmcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/AppServiceEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwU2VydmljZUVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/AppServices.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwU2VydmljZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/CustomerAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJBZGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/CustomerDeleteWarning.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJEZWxldGVXYXJuaW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/CustomerEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/Customers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/SiteDeletedWarning.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2l0ZURlbGV0ZWRXYXJuaW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/SiteScheduleAdd.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2l0ZVNjaGVkdWxlQWRkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/SiteScheduleList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2l0ZVNjaGVkdWxlTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/SiteScheduleEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2l0ZVNjaGVkdWxlRWRpdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-xa368f1hi8
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-5y5pk28j3x
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kqkjz1r4qt
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrech/OneDrive - Questica Inc/Desktop/testing app/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,233 @@
+/* _content/testing app/Pages/SiteScheduleEdit.razor.rz.scp.css */
+.open-button[b-xa368f1hi8] {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup form - hidden by default */
+  .form-popup[b-xa368f1hi8] {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container[b-xa368f1hi8] {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text][b-xa368f1hi8], .form-container input[type=password][b-xa368f1hi8] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus[b-xa368f1hi8], .form-container input[type=password]:focus[b-xa368f1hi8] {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn[b-xa368f1hi8] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel[b-xa368f1hi8] {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover[b-xa368f1hi8], .open-button:hover[b-xa368f1hi8] {
+    opacity: 1;
+  }
+
+  .box-maker[b-xa368f1hi8]{
+    background-color: rgb(215, 215, 215);
+    width: 500px;
+    height: 500px;
+    border: 50px #ddd;
+    padding: 10px;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+  }
+  .hr[b-xa368f1hi8]{
+    border-top: 3px solid rgb(255, 255, 255);
+  }
+  .textbox-title[b-xa368f1hi8]{
+    color: black;
+  }
+  .table-container[b-xa368f1hi8] {
+    margin-top: 10px;
+    max-height: 900px;
+    overflow: auto;
+  }
+/* _content/testing app/Shared/MainLayout.razor.rz.scp.css */
+.page[b-5y5pk28j3x] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-5y5pk28j3x] {
+    flex: 1;
+}
+
+.sidebar[b-5y5pk28j3x] {
+    background-image: linear-gradient(180deg, rgb(231, 163, 15) 0%, #d3c93a 70%);
+}
+
+.top-row[b-5y5pk28j3x] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-5y5pk28j3x]  a, .top-row .btn-link[b-5y5pk28j3x] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-5y5pk28j3x] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-5y5pk28j3x] {
+        display: none;
+    }
+
+    .top-row.auth[b-5y5pk28j3x] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-5y5pk28j3x], .top-row .btn-link[b-5y5pk28j3x] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-5y5pk28j3x] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-5y5pk28j3x] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-5y5pk28j3x] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row[b-5y5pk28j3x], article[b-5y5pk28j3x] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* _content/testing app/Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-kqkjz1r4qt] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-kqkjz1r4qt] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-kqkjz1r4qt] {
+    font-size: 1.1rem;
+}
+
+.oi[b-kqkjz1r4qt] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-kqkjz1r4qt] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-kqkjz1r4qt] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-kqkjz1r4qt] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-kqkjz1r4qt]  a {
+        color: #d7d7d7;
+        border-radius: 5px;
+        height: 3rem;
+        display: fixed;
+        align-items: center;
+        line-height: 3rem;
+        width: 300px;
+    }
+
+.nav-item[b-kqkjz1r4qt]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+    max-width: 230px;
+}
+
+.nav-item[b-kqkjz1r4qt]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    max-width: 230px;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-kqkjz1r4qt] {
+        display: none;
+    }
+
+    .collapse[b-kqkjz1r4qt] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
+.title-nameCompany[b-kqkjz1r4qt]{
+    color: rgb(240, 240, 238);
+    padding: auto;
+    display: inline;
+    align-items: right;
+    font-size: 1.2rem;
+}
