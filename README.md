@@ -1,2 +1,2 @@
 # privateQuestica
-Temp Storage for Question Integration Manager 
+Storage for Question Integration Manager 
