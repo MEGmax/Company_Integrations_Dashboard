@@ -6,11 +6,12 @@ namespace testing_app
     {
         //EDIT THE VARIABLES IN CONNECTIONGETTER. This will build a connection string to wherever relevant. Alter the final string 'connection' if changing the datasource database etc. variables causes problems
         public string connectionGetter() //used to establish a connection to a sql database, to load the content of the webpage
+        //REAL INFO REMOVED DUE TO PRIVACY CONERNS
         {
-            string datasource = @"L128"; 
-            string database = "testing";
-            string username = "sa";
-            string password = "temppassword1";
+            string datasource = @""; 
+            string database = "";
+            string username = "";
+            string password = "";
             string connection =  @"Data Source="+datasource+";Initial Catalog="+database+";Persist Security Info=True;User ID="+username+";Password="+password+";Encrypt=False"; 
             return connection;
         }
